@@ -1,0 +1,54 @@
+select concat('ALTER TABLE ',table_name,' ADD UNIQUE (updated_by);')  
+from information_schema.tables
+where TABLE_SCHEMA='KALEMI' and table_name not like 'auth%'
+
+ALTER TABLE client ADD UNIQUE (created_by);
+ALTER TABLE clientusers ADD UNIQUE (created_by);
+ALTER TABLE clientype ADD UNIQUE (created_by);
+ALTER TABLE package ADD UNIQUE (created_by);
+ALTER TABLE packageservices ADD UNIQUE (created_by...
+ALTER TABLE payments ADD UNIQUE (created_by);
+ALTER TABLE provider ADD UNIQUE (created_by);
+ALTER TABLE reservation ADD UNIQUE (created_by);
+ALTER TABLE services ADD UNIQUE (created_by);
+ALTER TABLE user ADD UNIQUE (created_by);
+
+
+
+ALTER TABLE client ADD UNIQUE (updated_by);
+ALTER TABLE clientusers ADD UNIQUE (updated_by);
+ALTER TABLE clientype ADD UNIQUE (updated_by);
+ALTER TABLE package ADD UNIQUE (updated_by);
+ALTER TABLE packageservices ADD UNIQUE (updated_by...
+ALTER TABLE payments ADD UNIQUE (updated_by);
+ALTER TABLE provider ADD UNIQUE (updated_by);
+ALTER TABLE reservation ADD UNIQUE (updated_by);
+ALTER TABLE services ADD UNIQUE (updated_by);
+ALTER TABLE user ADD UNIQUE (updated_by);
+
+
+ALTER TABLE client ADD CONSTRAINT user-client-created FOREIGN KEY ( created_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE clientusers ADD CONSTRAINT user-clientusers-created FOREIGN KEY ( created_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE clientype ADD CONSTRAINT user-clientype-created FOREIGN KEY ( created_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE package ADD CONSTRAINT user-package-created FOREIGN KEY ( created_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE packageservices ADD CONSTRAINT user-packageservices-created FOREIGN KEY ( created_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE payments ADD CONSTRAINT user-payments-created FOREIGN KEY ( created_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE provider ADD CONSTRAINT user-provider-created FOREIGN KEY ( created_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE reservation ADD CONSTRAINT user-reservation-created FOREIGN KEY ( created_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE services ADD CONSTRAINT user-services-created FOREIGN KEY ( created_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE user ADD CONSTRAINT user-user-created FOREIGN KEY ( created_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+
+
+
+ALTER TABLE client ADD CONSTRAINT user-client-updated FOREIGN KEY ( updated_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE clientusers ADD CONSTRAINT user-clientusers-updated FOREIGN KEY ( updated_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE clientype ADD CONSTRAINT user-clientype-updated FOREIGN KEY ( updated_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE package ADD CONSTRAINT user-package-updated FOREIGN KEY ( updated_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE packageservices ADD CONSTRAINT user-packageservices-updated FOREIGN KEY ( updated_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE payments ADD CONSTRAINT user-payments-updated FOREIGN KEY ( updated_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE provider ADD CONSTRAINT user-provider-updated FOREIGN KEY ( updated_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE reservation ADD CONSTRAINT user-reservation-updated FOREIGN KEY ( updated_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE services ADD CONSTRAINT user-services-updated FOREIGN KEY ( updated_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+ALTER TABLE user ADD CONSTRAINT user-user-updated FOREIGN KEY ( updated_by ) REFERENCES kalemi.user (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
+
+
