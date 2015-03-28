@@ -91,15 +91,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `created_by` int(10) DEFAULT NULL,
   `updated_by` int(10) DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `created_by` (`created_by`),
-  UNIQUE KEY `created_by_2` (`created_by`),
-  UNIQUE KEY `created_by_3` (`created_by`),
-  UNIQUE KEY `updated_by_3` (`updated_by`),
-  UNIQUE KEY `created_by_4` (`created_by`),
-  UNIQUE KEY `updated_by_4` (`updated_by`),
-  UNIQUE KEY `created_by_5` (`created_by`),
-  UNIQUE KEY `updated_by_5` (`updated_by`),
+  PRIMARY KEY (`id`), 
   KEY `fk_typeclient_idx` (`type`),
   KEY `updated_by` (`updated_by`),
   KEY `updated_by_2` (`updated_by`)
@@ -128,13 +120,7 @@ CREATE TABLE IF NOT EXISTS `clientusers` (
   `updated_by` int(10) DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `created_by` (`created_by`),
-  UNIQUE KEY `created_by_2` (`created_by`),
-  UNIQUE KEY `updated_by` (`updated_by`),
-  UNIQUE KEY `created_by_3` (`created_by`),
-  UNIQUE KEY `updated_by_2` (`updated_by`),
-  UNIQUE KEY `created_by_4` (`created_by`),
-  UNIQUE KEY `updated_by_3` (`updated_by`),
+ 
   KEY `fk_client_idx` (`client`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -150,14 +136,8 @@ CREATE TABLE IF NOT EXISTS `clientype` (
   `created_by` int(10) DEFAULT NULL,
   `updated_by` int(10) DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `created_by` (`created_by`),
-  UNIQUE KEY `created_by_2` (`created_by`),
-  UNIQUE KEY `updated_by` (`updated_by`),
-  UNIQUE KEY `created_by_3` (`created_by`),
-  UNIQUE KEY `updated_by_2` (`updated_by`),
-  UNIQUE KEY `created_by_4` (`created_by`),
-  UNIQUE KEY `updated_by_3` (`updated_by`)
+  PRIMARY KEY (`id`)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -176,14 +156,8 @@ CREATE TABLE IF NOT EXISTS `package` (
   `created_by` int(10) DEFAULT NULL,
   `updated_by` int(10) DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `created_by` (`created_by`),
-  UNIQUE KEY `created_by_2` (`created_by`),
-  UNIQUE KEY `updated_by` (`updated_by`),
-  UNIQUE KEY `created_by_3` (`created_by`),
-  UNIQUE KEY `updated_by_2` (`updated_by`),
-  UNIQUE KEY `created_by_4` (`created_by`),
-  UNIQUE KEY `updated_by_3` (`updated_by`)
+  PRIMARY KEY (`id`)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -205,13 +179,6 @@ CREATE TABLE IF NOT EXISTS `packageservices` (
   `updated_by` int(10) DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `created_by` (`created_by`),
-  UNIQUE KEY `created_by_2` (`created_by`),
-  UNIQUE KEY `updated_by` (`updated_by`),
-  UNIQUE KEY `created_by_3` (`created_by`),
-  UNIQUE KEY `updated_by_2` (`updated_by`),
-  UNIQUE KEY `created_by_4` (`created_by`),
-  UNIQUE KEY `updated_by_3` (`updated_by`),
   KEY `fk_package_idx` (`package`),
   KEY `fk_services_idx` (`service`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -231,14 +198,7 @@ CREATE TABLE IF NOT EXISTS `payments` (
   `updated_by` int(10) DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `created_by` (`created_by`),
-  UNIQUE KEY `created_by_2` (`created_by`),
-  UNIQUE KEY `updated_by` (`updated_by`),
-  UNIQUE KEY `created_by_3` (`created_by`),
-  UNIQUE KEY `updated_by_2` (`updated_by`),
-  UNIQUE KEY `created_by_4` (`created_by`),
-  UNIQUE KEY `updated_by_3` (`updated_by`),
-  KEY `fk_reservation_idx` (`reservation`),
+
   KEY `created_by_5` (`created_by`,`updated_by`),
   KEY `updated_at` (`updated_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -262,14 +222,8 @@ CREATE TABLE IF NOT EXISTS `provider` (
   `created_by` int(10) DEFAULT NULL,
   `updated_by` int(10) DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `created_by` (`created_by`),
-  UNIQUE KEY `created_by_2` (`created_by`),
-  UNIQUE KEY `updated_by` (`updated_by`),
-  UNIQUE KEY `created_by_3` (`created_by`),
-  UNIQUE KEY `updated_by_2` (`updated_by`),
-  UNIQUE KEY `created_by_4` (`created_by`),
-  UNIQUE KEY `updated_by_3` (`updated_by`)
+  PRIMARY KEY (`id`)
+ 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -292,13 +246,7 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   `updated_by` int(10) DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `created_by` (`created_by`),
-  UNIQUE KEY `created_by_2` (`created_by`),
-  UNIQUE KEY `updated_by` (`updated_by`),
-  UNIQUE KEY `created_by_3` (`created_by`),
-  UNIQUE KEY `updated_by_2` (`updated_by`),
-  UNIQUE KEY `created_by_4` (`created_by`),
-  UNIQUE KEY `updated_by_3` (`updated_by`),
+ 
   KEY `fk_pcg_service_idx` (`packageservice`),
   KEY `fk_client_res_idx` (`client`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -321,13 +269,7 @@ CREATE TABLE IF NOT EXISTS `services` (
   `updated_by` int(10) DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`,`provider`),
-  UNIQUE KEY `created_by` (`created_by`),
-  UNIQUE KEY `created_by_2` (`created_by`),
-  UNIQUE KEY `updated_by` (`updated_by`),
-  UNIQUE KEY `created_by_3` (`created_by`),
-  UNIQUE KEY `updated_by_2` (`updated_by`),
-  UNIQUE KEY `created_by_4` (`created_by`),
-  UNIQUE KEY `updated_by_3` (`updated_by`),
+
   KEY `fk_sherbime_ofruessherbim_idx` (`provider`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
